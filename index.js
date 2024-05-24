@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv';
+import { dbConnect } from './dbConnect.js';
 dotenv.config();
 const app=express()
 app.get('/',(req,res)=>{
@@ -15,3 +16,4 @@ app.get('/about',(req,res)=>{
 app.listen(process.env.PORT,()=>{
    console.log(`Listening on port ${process.env.PORT}`)
 })
+dbConnect()
